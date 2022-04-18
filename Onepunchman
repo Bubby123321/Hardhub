@@ -1,0 +1,43 @@
+    print('Saitama Made by mugaga#2801')
+    --Saitama
+    --Made by mugaga#2801
+    --For The Script To Execute You Need:
+    --https://web.roblox.com/catalog/6470135113/Fan-Hand-Sign-Why-Dont-We-WDW
+    --R - Main Idle
+    --E - Barrage
+    --Click - Punch
+    for i,v in next, game:GetService("Players").LocalPlayer.Character:GetDescendants() do
+    if v:IsA("BasePart") and v.Name ~="HumanoidRootPart" then 
+    game:GetService("RunService").Heartbeat:connect(function()
+    v.Velocity = Vector3.new(0,35,0)
+    wait(0.5)
+    end)
+    end
+    end
+    
+    game:GetService("StarterGui"):SetCore("SendNotification", { 
+        local character = game.Players.LocalPlayer.Character
+        local mode = 1
+        
+        
+        game:GetService('RunService').Heartbeat:Connect(function()
+            for i,v in pairs(character:GetChildren()) do
+                if v:IsA("BasePart") then
+                    v.Velocity = Vector3.new(30,0,0)
+                    v.CFrame = v.CFrame
+                end
+            end
+        end)
+        
+        game:GetService('RunService').Heartbeat:Connect(function()
+            for i,v in pairs(character.Humanoid:GetAccessories()) do 
+                if not v.Handle:FindFirstChild("AccessoryWeld") then 
+                    v.Handle.Velocity = Vector3.new(0,35,0)
+                end
+            end
+        end)
+        
+        sethiddenproperty(game.Players.LocalPlayer,"MaximumSimulationRadius",math.huge)
+        sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",99999999999999999999)
+         
+        -- // Uses Mizt's bypass \\ --
